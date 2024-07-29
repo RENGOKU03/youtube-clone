@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoCard = () => {
   return (
-    <div className="w-11/12 m-auto bg-gray-900 rounded-2xl">
+    <div className="w-11/12 lg:w-96 md:w-56 bg-gray-900 rounded-2xl">
       <img
         className="object-cover w-full rounded-t-2xl h-2/3"
         src="https://picsum.photos/id/1025/1920/1080"

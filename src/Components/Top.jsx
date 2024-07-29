@@ -3,7 +3,7 @@ import { IoSearch } from "react-icons/io5";
 
 const Top = () => {
   return (
-    <div className="flex pt-2 h-16 justify-between items-center bg-black ">
+    <div className="flex pt-2 h-16 justify-between items-center z-10 bg-black ">
       <img className="h-3/4 ml-5" src="./logo.ico" alt="logo" />
       <div className="flex justify-center items-center">
         <input
