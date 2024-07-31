@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./Components/Error.jsx";
-import Videos from "./Components/Videos.jsx";
+import VideoDetail from "./Components/VideoDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: "/videos",
-    element: <Videos />,
+    path: "/video/:id",
+    element: <VideoDetail />,
   },
 ]);
 

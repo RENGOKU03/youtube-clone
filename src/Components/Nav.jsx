@@ -14,9 +14,9 @@ import { MdOutlineSportsVolleyball } from "react-icons/md";
 import { GiAmpleDress } from "react-icons/gi";
 import { MdFace2 } from "react-icons/md";
 
-const Nav = () => {
+const Nav = ({ category, setCategory }) => {
   const navItems = [
-    { text: "Home", icon: <IoMdHome /> },
+    { text: "New", icon: <IoMdHome /> },
     { text: "Coding", icon: <FaCode /> },
     { text: "ReactJS", icon: <FaReact /> },
     { text: "NextJs", icon: <RiNextjsFill /> },
@@ -31,11 +31,18 @@ const Nav = () => {
     { text: "Beauty", icon: <MdFace2 /> },
   ];
   return (
-    <div className="bg-black p-2 flex gap-3 overflow-scroll lg:flex-col lg:w-1/6">
-      {navItems.map((item, index) => (
-        <Navicon key={index} item={item} />
-      ))}
-    </div>
+    <>
+      <div className="bg-black p-2 flex gap-3 overflow-scroll md:flex-col lg:w-[10%]">
+        {navItems.map((item) => (
+          <Navicon
+            setCategory={setCategory}
+            item={item}
+            key={item.text}
+            isActive={category === item.text}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
