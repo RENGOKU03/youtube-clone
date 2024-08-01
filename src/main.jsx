@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./Components/Error.jsx";
 import VideoDetail from "./Components/VideoDetail.jsx";
+import SearchFeed from "./Components/SearchFeed.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/video/:id",
     element: <VideoDetail />,
+  },
+  {
+    path: "/search/:searchTerm",
+    element: <SearchFeed />,
   },
 ]);
 

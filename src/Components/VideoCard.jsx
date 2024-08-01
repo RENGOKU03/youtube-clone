@@ -12,7 +12,7 @@ const VideoCard = ({
       {/* // Card div */}
       <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`}>
         <img
-          className="w-full h-full rounded-t-2xl max-h-[65%]"
+          className="w-full h-full rounded-t-2xl md:h-80"
           src={
             snippet?.thumbnails?.high?.url ||
             "https://picsum.photos/id/1025/1920/1080"
@@ -20,7 +20,7 @@ const VideoCard = ({
           alt="video"
         />
 
-        <div className="p-2 ml-3 text-left max-h-[35%]">
+        <div className="p-2 ml-3 text-left">
           <h3 className="font-semibold text-xl md:text-[15px] text-wrap text-white">
             {snippet.title.slice(0, 60) || "Title not available"}
           </h3>

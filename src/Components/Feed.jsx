@@ -20,15 +20,17 @@ const Feed = () => {
   return (
     <>
       <div className="md:flex w-full">
-        <Nav category={category} setCategory={setCategory} />
-        <div className="flex flex-col w-5/6">
+        <div className="lg:w-52">
+          <Nav category={category} setCategory={setCategory} />
+        </div>
+        <div className="flex flex-col">
           <div className="bg-black text-white font-extrabold text-3xl p-3 lg:h-12 lg:w-full">
             <p>
               {category}
               <span className="text-red-600 "> Videos</span>
             </p>
           </div>
-          <Videos videos={videos} />
+          <Videos videos={videos} wide={"md:w-1/4"} />
         </div>
       </div>
     </>
