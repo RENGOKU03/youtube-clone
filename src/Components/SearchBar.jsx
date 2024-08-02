@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoSearch } from "react-icons/io5";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,10 +12,13 @@ const SearchBar = () => {
     const newSearchTerm = input.current.value;
     setSearchTerm(newSearchTerm);
   };
-  if (searchTerm) {
-    navigate(`/search/${searchTerm}`);
-    setSearchTerm("");
-  }
+  useEffect(() => {
+    if (searchTerm) {
+      navigate(`/search/${searchTerm}`);
+      setSearchTerm("");
+    }
+  }, [searchTerm, navigate]);
+
   return (
     <div className="flex justify-center items-center z-10 bg-black">
       <input

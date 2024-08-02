@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { fetchFromAPI } from "./Fetch";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import Loader from "./Loader";
 import Top from "./Top";
-import VideoCard from "./VideoCard";
 import Videos from "./Videos";
+import { FaCheck } from "react-icons/fa";
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -22,6 +22,12 @@ const VideoDetail = () => {
     );
   }, [id]);
   if (!videoDetail?.snippet) return <Loader />;
+
+  const {
+    snippet: { title, channelId, channelTitle },
+    statistics: { viewCount, likeCount },
+  } = videoDetail;
+
   return (
     <div>
       <Top />
@@ -35,19 +41,24 @@ const VideoDetail = () => {
             controls
           />
           <p className="text-xl font-bold border rounded-3xl p-3 bg-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-            blanditiis placeat? Reiciendis, odio beatae. Neque corporis quidem
-            harum eius iste.
+            {title}
           </p>
-          <div className="flex justify-between mt-3">
-            <span className="px-2 py-1 bg-gray-700 rounded-2xl">
-              Channel Name
-            </span>
-            <div className="mr-4 bg-gray-700 px-2 py-1  rounded-2xl">
-              <span>Views</span>
-              <span>Likes</span>
+          <Link to={`/channel/${channelId}`}>
+            <div className="flex justify-between mt-3">
+              <span className="px-2 py-1 bg-gray-700 rounded-2xl flex gap-3 items-center">
+                {channelTitle}
+                <FaCheck />
+              </span>
+              <div className="mr-4 bg-gray-700 px-2 py-1  rounded-2xl">
+                {viewCount && (
+                  <span> {parseInt(viewCount).toLocaleString()} views</span>
+                )}
+                {likeCount && (
+                  <span>{parseInt(likeCount).toLocaleString()} likes</span>
+                )}
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
         <div className="w-1/3 ml-[70%]">
           <Videos videos={videos} wide={"md:w-1/3"} />

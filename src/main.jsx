@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./Components/Error.jsx";
 import VideoDetail from "./Components/VideoDetail.jsx";
 import SearchFeed from "./Components/SearchFeed.jsx";
+import Channel from "./Components/Channel.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/search/:searchTerm",
     element: <SearchFeed />,
+  },
+  {
+    path: "/channel/:id",
+    element: <Channel />,
   },
 ]);
 
