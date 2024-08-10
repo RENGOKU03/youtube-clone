@@ -31,25 +31,26 @@ const VideoDetail = () => {
   return (
     <div>
       <Top />
-      <div className="flex w-full bg-black">
-        <div className="h-full w-[70%] fixed p-10 text-white">
-          <ReactPlayer
-            className="react-player"
-            height={"600px"}
-            width={"100%"}
-            url={`https://www.youtube.com/watch?v=${id}`}
-            controls
-          />
-          <p className="text-xl font-bold border rounded-3xl p-3 bg-gray-700">
+      <div className="lg:flex w-full bg-black">
+        <div className="lg:h-full h-40 w-screen lg:w-[70%] lg:fixed p-10 text-white">
+          <div className="my-4 w-screen lg:w-full">
+            <ReactPlayer
+              className="react-player "
+              url={`https://www.youtube.com/watch?v=${id}`}
+              controls
+            />
+          </div>
+
+          <p className="text-xl font-bold border-2 border-gray-900 rounded-3xl lg:p-3 p-2 bg-gray-700">
             {title}
           </p>
           <Link to={`/channel/${channelId}`}>
-            <div className="flex justify-between mt-3">
-              <span className="px-2 py-1 bg-gray-700 rounded-2xl flex gap-3 items-center">
+            <div className="flex justify-between mt-3 gap-2">
+              <span className="px-2 lg:py-1 bg-gray-700 rounded-2xl flex lg:gap-3 items-center min-w-32 ">
                 {channelTitle}
                 <FaCheck />
               </span>
-              <div className="mr-4 bg-gray-700 px-2 py-1  rounded-2xl">
+              <div className="lg:mr-4 bg-gray-700 px-2 py-1 flex flex-col lg:flex-row min-h-12 items-center min-w-44 rounded-2xl">
                 {viewCount && (
                   <span> {parseInt(viewCount).toLocaleString()} views</span>
                 )}
@@ -60,7 +61,7 @@ const VideoDetail = () => {
             </div>
           </Link>
         </div>
-        <div className="w-1/3 ml-[70%]">
+        <div className="lg:w-1/3 lg:ml-[70%] mt-[400px] lg:mt-0">
           <Videos videos={videos} wide={"md:w-1/3"} />
         </div>
       </div>

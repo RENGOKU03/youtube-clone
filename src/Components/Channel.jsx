@@ -13,8 +13,7 @@ const Channel = () => {
   useEffect(() => {
     const fetchResults = async () => {
       const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
-      console.log(data.items.snippet.title);
-      setChannelDetail(data?.items);
+      setChannelDetail(data?.items[0]);
       const videoData = await fetchFromAPI(
         `search?channelId=${id}&part=snippet%2Cid&order=date`
       );
@@ -22,7 +21,6 @@ const Channel = () => {
     };
     fetchResults();
   }, [id]);
-  console.log(channelDetail);
   return (
     <div className="bg-black">
       <Top />
