@@ -3,7 +3,12 @@ import VideoCard from "./VideoCard";
 import Loader from "./Loader";
 
 const Videos = ({ videos, wide }) => {
-  if (!videos?.length) return <Loader />;
+  if (!videos?.length)
+    return (
+      <div className="min-w-full">
+        <Loader />
+      </div>
+    );
   return (
     <div className="flex flex-col md:flex-row gap-3 md:flex-wrap items-center mx-5 justify-center">
       {videos.map((video, idx) => {

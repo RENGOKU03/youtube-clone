@@ -23,7 +23,7 @@ const Feed = () => {
         <div className="lg:w-52">
           <Nav category={category} setCategory={setCategory} />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
           <div className="bg-black text-white font-extrabold text-3xl p-3 lg:h-12 lg:w-full">
             <p>
               {category}

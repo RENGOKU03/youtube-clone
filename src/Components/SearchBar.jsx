@@ -20,14 +20,13 @@ const SearchBar = () => {
   }, [searchTerm, navigate]);
 
   return (
-    <div className="flex justify-center items-center z-10 bg-black w-full">
+    <div className="flex justify-center items-center z-10 bg-black">
       <input
         type="text"
         ref={input}
-        className="bg-white relative text-black h-3/4 mr-5 rounded-3xl py-2 px-4 outline-none sm:w-64 w-full"
+        className="bg-white relative text-black h-3/4 mr-5 rounded-3xl py-2 px-4 outline-none sm:w-60 md:w-80 lg:w-[400px] w-full "
         placeholder="Search..."
       />
-
       <div className="absolute right-10 text-[#FC1503]">
         <Link>
           <IoSearch size={"20px"} onClick={handelSubmit} />
