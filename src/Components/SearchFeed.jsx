@@ -16,11 +16,11 @@ const SearchFeed = () => {
   return (
     <div className=" text-white bg-black">
       <Top />
-      <h1 className="text-4xl mb-6 mt-6 ml-5 font-semibold">
+      <h1 className="text-4xl mb-6 mt-6 ml-5 font-semibold ">
         Search Results For: <span className="text-[#FC1503]">{searchTerm}</span>{" "}
         videos
       </h1>
-      <Videos videos={videos} wide={"md:w-1/5"} />
+      <Videos videos={videos} isDetail={false}/>
     </div>
   );
 };

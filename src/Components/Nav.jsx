@@ -32,7 +32,7 @@ const Nav = ({ category, setCategory }) => {
   ];
   return (
     <>
-      <div className="bg-black p-2 flex gap-3 overflow-scroll md:flex-col ">
+      <div className="bg-black p-2 flex gap-3 overflow-scroll md:overflow-hidden md:flex-col ">
         {navItems.map((item) => (
           <Navicon
             setCategory={setCategory}

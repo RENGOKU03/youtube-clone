@@ -30,7 +30,7 @@ const Feed = () => {
               <span className="text-red-600 "> Videos</span>
             </p>
           </div>
-          <Videos videos={videos} wide={"md:w-1/4"} />
+          <Videos videos={videos} isDetail={false} />
         </div>
       </div>
     </>

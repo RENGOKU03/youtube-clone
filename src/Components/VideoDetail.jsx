@@ -30,10 +30,11 @@ const VideoDetail = () => {
 
   return (
     <div>
-      <Top />
+        <div className="fixed scroll-smooth h-20 w-full z-20 bg-black" > <Top /></div>
+
       <div className="lg:flex w-full bg-black">
-        <div className="lg:h-full h-40 w-screen lg:w-[70%] lg:fixed p-10 text-white">
-          <div className="my-4 w-screen lg:w-full">
+        <div className=" w-screen lg:w-[70%] lg:fixed p-10 text-white overflow-hidden pt-16">
+          <div className="my-4 w-screen lg:w-full ">
             <ReactPlayer
               className="react-player "
               url={`https://www.youtube.com/watch?v=${id}`}
@@ -61,8 +62,8 @@ const VideoDetail = () => {
             </div>
           </Link>
         </div>
-        <div className="lg:w-1/3 lg:ml-[70%] mt-[400px] lg:mt-0">
-          <Videos videos={videos} wide={"md:w-1/3"} />
+        <div className="lg:w-1/3 lg:ml-[70%]  lg:mt-20 z-10" >
+          <Videos videos={videos} isDetail={true}/>
         </div>
       </div>
     </div>

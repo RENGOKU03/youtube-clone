@@ -6,10 +6,12 @@ function App() {
   return (
     <>
       <div className="bg-black min-h-screen">
-        <div className="w-full">
+        <div className="w-full fixed">
           <Top />
-        </div>
+        </div >
+        <div className="pt-24">
         <Feed />
+        </div>
       </div>
     </>
   );
